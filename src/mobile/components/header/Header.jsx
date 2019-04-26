@@ -1,5 +1,7 @@
 import React from 'react';
 import { makeImagePath } from "../util/path";
+import { connect, bindActionCreators } from 'redux';
+import { navChange } from '../../actions';
 
 const Header = ({gohome, navi, nav, precheck, home, appyform, applysuccess, applysuccess2, proposal, proposalsuccess}) => {
     return (
@@ -38,4 +40,19 @@ const Header = ({gohome, navi, nav, precheck, home, appyform, applysuccess, appl
     );
 };
 
-export default Header;
+const mapStateToProps = (state) => {
+    return {
+        nav: state.header.nav
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onNavChange: bindActionCreators(navChange, dispatch)
+    }
+};
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(Header);

@@ -1,5 +1,6 @@
-const state = () => {
-    return null;
-};
+import { combineReducers } from 'redux';
+import Header from './Header.js';
 
-export default state;
+export default combineReducers(
+    Header
+);
