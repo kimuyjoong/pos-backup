@@ -1,0 +1,301 @@
+.layoutType1{
+  padding: 20px 20px 60px 20px;
+}
+
+.layoutType2{
+  padding: 130px 20px 0;
+  .topTitleType1{
+    text-align: center;
+  }
+  .titleType2{
+    border-top: 2px solid #2d2d2d;
+    margin-top: -4px;
+    padding-top: 40px;
+    font-size: 20px;
+    text-align: center;
+    line-height: 1.4;
+  }
+}
+
+.topTitleType1{
+  margin:20px 0 28px;
+  .title1{
+    font-size: 26px;
+    line-height: 34px;
+    font-weight: 700;
+  }
+  &.type2{
+    position: relative;
+    border-bottom: 2px solid #2d2d2d;
+    padding-bottom: 28px;
+    .topTitleImg{
+      display: block;
+      width: 96px;
+      height: 96px;
+      position: absolute;
+      right:0;
+      bottom:0;
+    }
+  }
+  &.type3{
+
+  }
+}
+
+.btnType1{
+  width: 240px;
+  height: 60px;
+  background: #247de4;
+  color: #fff;
+  border: none;
+  font-size:22px;
+  border-radius: 35.5px;
+  box-shadow: 5px 6px 7px 0 rgba(0, 0, 0, 0.3);
+  line-height: 60px;
+  display: block;
+  margin:0 auto;
+}
+
+.formWrap{
+  margin-bottom: 40px;
+  .title1{
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 14px;
+  }
+  .title2{
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+}
+
+.inputType1{
+  border:1px solid #9b9b9b;
+  height: 50px;
+  line-height: 50px;
+  padding-left: 20px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  width: 100%;
+  font-size: 16px;
+}
+
+.textAreaType1{
+  border:1px solid #9b9b9b;
+  height: 172px;
+  padding: 17px 20px 0 20px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  width: 100%;
+  font-size: 16px;
+  .type2{
+    height: 172px;
+  }
+}
+
+.introMsg{
+  font-size: 14px;
+  color: #9b9b9b;
+  font-weight: 300;
+  strong{
+    font-weight: 700;
+    color: #2d2d2d;
+    text-decoration: underline;
+  }
+}
+
+.mt40{
+  margin-top: 40px;
+}
+
+.selectWrap{
+  position: relative;
+
+
+  //.selectArrow{
+  //  position: absolute;
+  //  right:0;
+  //  top:0;
+  //  width: 50px;
+  //  box-sizing: border-box;
+  //  height: 50px;
+  //  border: 1px solid #9b9b9b;
+  //  background: #eee;
+  //  text-align: center;
+  //  padding-top: 10px;
+  //  img{
+  //    width: 26px;
+  //    height: 26px;
+  //  }
+  //}
+    &:after{
+      content: '';
+      display: block;
+      position: absolute;
+      right:1px;
+      border-left: 1px solid #9b9b9b;
+      top:1px;
+      width: 48px;
+      height: 48px;
+      background: url("../image/selectArrow@3x.png") no-repeat center center #eeeeee;
+      -webkit-background-size: 26px;
+      background-size: 26px;
+      pointer-events: none;
+    }
+}
+
+.selectBoxType1{
+  border:1px solid #9b9b9b;
+  border-radius: 0;
+  height: 50px;
+  line-height: 50px;
+  padding-left: 20px;
+  box-sizing: border-box;
+  margin-bottom: 6px;
+  width: 100%;
+  font-size: 16px;
+  background: #fff;
+}
+
+.titleWithRadio{
+  border-bottom: 1px solid #9b9b9b;
+  position: relative;
+  height: 30px;
+  margin-bottom: 25px;
+  .inRadioWrap{
+    position: absolute;
+    right:0;
+    top:0;
+  }
+}
+
+.radioType2{
+  display: inline-block;
+  margin-left: 50px;
+  position: relative;
+  input{
+    position: absolute;
+    overflow: hidden;
+    left:-9999px;
+    &:checked + label{
+      &:before{
+        background: url("../image/radioBtnCheck@3x.png") no-repeat;
+        -webkit-background-size: 100%;
+        background-size: 100%;
+      }
+    }
+  }
+  label{
+    font-size: 20px;
+    font-weight: 700;
+    position: relative;
+    &:before{
+      content: '';
+      display: block;
+      position: absolute;
+      left:-33px;
+      top:-2px;
+      width: 26px;
+      height: 26px;
+      background: url("../image/radioBtn@3x.png") no-repeat;
+      -webkit-background-size: 100%;
+      background-size: 100%;
+    }
+  }
+  &.option1{
+    margin-left: 33px;
+    margin-top: 10px;
+    label{
+      font-size: 14px;
+      font-weight: 400;
+      &:before{
+        top:-5px;
+      }
+    }
+  }
+}
+
+.radioWrap{
+  margin-bottom: 10px;
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  .radioType1{
+    display: table-cell;
+    text-align: center;
+    border:1px solid #9b9b9b;
+    border-right: none;
+    box-sizing: border-box;
+    label{
+      font-size: 16px;
+      z-index: 6;
+      cursor:pointer;
+      height: 50px;
+      line-height: 50px;
+      width: 100%;
+      display: block;
+    }
+    input{
+      position: absolute;
+      visibility: hidden;
+      &:checked + label{
+        background: #2d2d2d;
+        color: #fff;
+      }
+    }
+    &:last-child{
+      border-right: 1px solid #9b9b9b;
+    }
+  }
+  &.type2{
+    margin-bottom: 20px;
+
+  }
+}
+
+.addFileWrap{
+  position: relative;
+  height: 50px;
+  margin-bottom: 20px;
+  input{
+    position: absolute;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+  }
+  label{
+    border:1px solid #9b9b9b;
+    height: 50px;
+    display: block;
+    position: relative;
+    background: #fff;
+    line-height: 50px;
+    padding-left: 20px;
+    box-sizing: border-box;
+    color: #9b9b9b;
+    &:after{
+      content: '찾아보기';
+      position: absolute;
+      right:0;
+      top:0;
+      width: 100px;
+      color: #2d2d2d;
+      height: 48px;
+      border-left: 1px solid #9b9b9b;
+      line-height: 50px;
+      text-align: center;
+      background: #eee;
+    }
+  }
+}
+
+.proposalImg{
+  display: block;
+  width: 100%;
+  border-bottom: 2px solid #2d2d2d;
+  margin-bottom: 38px;
+}

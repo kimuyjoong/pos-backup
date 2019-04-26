@@ -1,0 +1,197 @@
+.Home{
+  position: relative;
+  .floatingIcon{
+    position: fixed;
+    right:0;
+    bottom:70px;
+    width: 110px;
+    z-index: 1;
+    height: 110px;
+    img{
+      display: block;
+      width: 100%;
+    }
+  }
+  .HomeBanner {
+  display: block;
+    img{
+      display: block;
+      width: 100%;
+    }
+  }
+  .section1{
+    height: 370px;
+    text-align: center;
+    background: #f9f9f9;
+    padding-top: 75px;
+    box-sizing: border-box;
+    position: relative;
+    .img1{
+      width: 360px;
+      height: 148px;
+      display: block;
+      position: absolute;
+      left:0;
+      bottom:0;
+      z-index: 1;
+    }
+    .text1{
+      font-size: 20px;
+      color: #9b9b9b;
+      line-height: 30px;
+      text-align: left;
+      width: 235px;
+      margin: 0 auto 0;
+      position: relative;
+      &:before{
+        content: '“';
+        display: block;
+        position: absolute;
+        left:-33px;
+        top:7px;
+        font-size: 56px;
+        color: #9b9b9b;
+      }
+      &:after{
+        content: '”';
+        display: block;
+        position: absolute;
+        right:-33px;
+        top:7px;
+        font-size: 56px;
+        color: #9b9b9b;
+      }
+    }
+  }
+  .section2{
+    height: 260px;
+    background: #4a4a4a;
+    position: relative;
+    margin-top: -29px;
+    img{
+      width: 360px;
+      height: 275px;
+      display: block;
+      position: absolute;
+      right:0;
+      bottom:-45px;
+    }
+  }
+  .section3{
+    padding-top: 30px;
+    padding-left: 22px;
+    .text1{
+      font-size: 20px;
+      color: #2d2d2d;
+      font-weight: 700;
+      line-height: 30px;
+    }
+  }
+  .longLine{
+    margin-top: 100px;
+    position: relative;
+    overflow: hidden;
+  }
+}
+
+.longLine .step1{
+  position: absolute;
+  left:0;
+  top:0;
+  width: 177px;
+  height: 1218px;
+  display: block;
+}
+
+.longLine .stepList{
+  float: right;
+  width: 240px;
+  text-align: left;
+  margin-top: 110px;
+}
+
+.longLine .stepList li{
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.longLine .stepList li .listImg{
+  width: 240px;
+  height: 158px;
+  display: block;
+  /*margin-bottom: 30px;*/
+  position: relative;
+}
+
+.stepList .listTit1:before{
+  content: '';
+  display: block;
+  position: absolute;
+  left:0;
+  top:0;
+  width: 220px;
+  height: 1px;
+  background: #2d2d2d;
+}
+
+.stepList .listTit1{
+  font-size: 26px;
+  position: relative;
+  padding-top: 30px;
+  margin-bottom: 13px;
+  color: #2d2d2d;
+  font-weight: 700;
+}
+
+.stepList .listTit2{
+  font-size: 16px;
+  color: #2d2d2d;
+  line-height: 22px;
+}
+
+.section4{
+  margin:100px 0 100px;
+  padding: 20px;
+}
+
+.section4 .videoImage{
+  display: block;
+  width: 100%;
+}
+
+.section5 {
+  padding: 20px 20px 120px 20px;
+  position: relative;
+}
+
+.section5 .tit1{
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+
+.section5 .btnWrap img{
+  vertical-align: middle;
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+}
+
+.section5 .applyBtn{
+  font-size: 34px;
+  color: #2d2d2d;
+  font-weight: 700;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 3px;
+}
+
+.section5 .botImg{
+  width: 240px;
+  height: 150px;
+  display: block;
+  position: absolute;
+  right:0;
+  bottom:0;
+}

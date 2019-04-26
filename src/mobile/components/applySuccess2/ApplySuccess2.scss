@@ -1,0 +1,36 @@
+@import "../preCheck/preCheck.scss";
+.successTitle1{
+  font-size: 20px;
+  line-height: 28px;
+  margin-bottom: 20px;
+}
+
+.successTitle2{
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.confirmImg{
+  display: block;
+  width: 360px;
+  height: 190px;
+  margin:0 auto;
+}
+
+.btnType1{
+  margin-bottom: 60px;
+}
+
+.notProve{
+  border-bottom: 2px solid #2d2d2d;
+  padding: 0px 0 40px;
+  text-align: center;
+  margin-bottom: 40px;
+  .msg{
+    font-size: 20px;
+    margin-top: 23px;
+    span{
+      color: #247de4;
+    }
+  }
+}
