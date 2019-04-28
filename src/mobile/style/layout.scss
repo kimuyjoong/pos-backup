@@ -57,7 +57,7 @@ header{
   height: 79px;
   line-height: 79px;
 }
-.Footer .topArea a{
+.Footer .topArea p{
   text-align: center;
 }
 
@@ -138,7 +138,7 @@ header{
   width: 100%;
   height: 100%;
   z-index: 2;
-  //top:0;
+  top:54px;
   background-color: rgba(0, 0, 0, 0.8);
   .btnType1{
     margin-top: -4px;

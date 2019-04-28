@@ -1,5 +1,7 @@
 import React from 'react';
-const ProposalSuccess1 = () => {
+import {Link} from "react-router-dom";
+
+const ProposalSuccess = () => {
     return (
         <div className="ApplySuccess2">
             <div className="layoutType1 type3">
@@ -9,9 +11,9 @@ const ProposalSuccess1 = () => {
                         빨리 연락드리겠습니다.</p>
                 </div>
                 <img src={process.env.PUBLIC_URL + 'common/mobile/image/m-contact-image-success@3x.png'} className="proposalImg" alt=""/>
-                <button className="btnType1">확인</button>
+                <button className="btnType1"><Link to='/'>확인</Link></button>
             </div>
         </div>
     );
 };
-export default ProposalSuccess1;
+export default ProposalSuccess;

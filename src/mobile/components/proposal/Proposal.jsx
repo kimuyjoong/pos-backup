@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import ('./Proposal.scss');
-const Proposal = ( { proposalsuccess }) => {
+const Proposal = () => {
     return (
         <div className="Proposal">
             <div className="layoutType1">
@@ -71,7 +72,7 @@ const Proposal = ( { proposalsuccess }) => {
                     </div>
                 </div>
 
-                <button onClick={proposalsuccess} className="btnType1">신청하기</button>
+                <button className="btnType1"><Link to='/proposalsuccess'>신청하기</Link></button>
 
             </div>
         </div>

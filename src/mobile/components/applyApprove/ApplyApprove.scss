@@ -12,25 +12,11 @@
 
 .confirmImg{
   display: block;
-  width: 360px;
+  width: 100%;
   height: 190px;
   margin:0 auto;
 }
 
 .btnType1{
   margin-bottom: 60px;
-}
-
-.notProve{
-  border-bottom: 2px solid #2d2d2d;
-  padding: 0px 0 40px;
-  text-align: center;
-  margin-bottom: 40px;
-  .msg{
-    font-size: 20px;
-    margin-top: 23px;
-    span{
-      color: #247de4;
-    }
-  }
 }

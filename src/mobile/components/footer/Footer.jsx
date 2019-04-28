@@ -1,11 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const Footer = ( { proposal }) => {
+const Footer = () => {
     return (
         <div className="Footer">
             <div className="topArea">
-                <a onClick={ proposal } className="left">제휴 문의하기</a>
-                <a className="right">설명서 다운로드</a>
+                <p className="left"><Link to='/proposal'>제휴 문의하기</Link></p>
+                <p className="right">설명서 다운로드</p>
             </div>
             <div className="botArea">
                 <ul className="list">

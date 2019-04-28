@@ -1,5 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import ('./ApplySuccess.scss');
+
 const ApplySuccess = ( {applysuccess}) => {
     return (
         <div className="ApplySuccess">
@@ -46,7 +49,7 @@ const ApplySuccess = ( {applysuccess}) => {
                         </div>
                     </div>
                 </div>
-                <button onClick={ applysuccess } className="btnType1">신청 정보 수정하기</button>
+                <button className="btnType1"><Link to='/applyform'>신청 정보 수정하기</Link></button>
 
             </div>
         </div>

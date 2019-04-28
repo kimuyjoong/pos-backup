@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import ('./PreCheck.scss');
-const PreCheck = ({ aftercheck }) => {
+const PreCheck = () => {
     return (
         <div className="PreCheck">
             <div className="layoutType1">
@@ -24,7 +25,7 @@ const PreCheck = ({ aftercheck }) => {
                         <li>감열 영수증 프린터</li>
                     </ul>
                 </div>
-                <button onClick={ aftercheck } className="btnType1">확인했어요</button>
+                <button className="btnType1"><Link to='/applyform'>확인했어요</Link></button>
             </div>
         </div>
     );

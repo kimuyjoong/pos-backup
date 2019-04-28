@@ -1,6 +1,8 @@
 import React from 'react';
-import ('./ApplySuccess2.scss');
-const ApplySuccess2 = () => {
+import ('./ApplyApprove.scss');
+
+// import ('./ApplyApprove.scss');
+const ApplyApprove = () => {
     return (
         <div className="ApplySuccess2">
             <div className="layoutType1 type3">
@@ -38,13 +40,8 @@ const ApplySuccess2 = () => {
                 </p>
                 <img className="" src={process.env.PUBLIC_URL + 'common/mobile/image/homeImg7@3x.png'} alt=""/>
 
-                <div className="notProve">
-                    <img src={process.env.PUBLIC_URL + 'common/mobile/image/m-return-image@3x.png'} alt=""/>
-                    <p className="msg"><span>부릉ID</span>가 확인되지 않았습니다.</p>
-                </div>
-                <button className="btnType1">다시 신청하기</button>
             </div>
         </div>
     );
 };
-export default ApplySuccess2;
+export default ApplyApprove;

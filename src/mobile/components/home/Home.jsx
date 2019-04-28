@@ -1,16 +1,15 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 import { makeImagePath } from "../util/path";
 import('./Home.scss');
 
-const Home = ( { precheck }) =>{
+const Home = ( ) =>{
 
         return (
             <div className="Home">
-                <a className="HomeBanner" onClick={ precheck }>
-                    {/*<img src={makeImagePath('common/mobile/image/m-banner@3x.png')} alt=""/>*/}
-                    <img src={process.env.PUBLIC_URL + 'common/mobile/image/m-banner@3x.png'} alt=""/>
-                </a>
+                <p className="HomeBanner">
+                    <Link to='/precheck'><img src={process.env.PUBLIC_URL + 'common/mobile/image/m-banner@3x.png'} alt=""/></Link>
+                </p>
                 <div className="section1">
                     <p className="text1">
                         <strong>매장</strong>에 손님이 가득한데 <br/>
@@ -68,7 +67,7 @@ const Home = ( { precheck }) =>{
                         </ul>
                     </div>
                 </div>
-                <div className="section4">
+                <div id="section4" className="section4">
                     <img className="videoImage" src={makeImagePath('common/mobile/image/homeImg7@3x.png')} alt=""/>
                 </div>
                 <div className="section5">
@@ -79,13 +78,13 @@ const Home = ( { precheck }) =>{
                         매출에 집중하세요.
                     </p>
                     <div className="btnWrap">
-                        <button className="applyBtn">신청하기</button>
+                        <Link to='/precheck'><button className="applyBtn">신청하기</button></Link>
                         <img src={makeImagePath('common/mobile/image/applyBtnRight@3x.png')} alt=""/>
                     </div>
                     <img className="botImg" src={makeImagePath('common/mobile/image/homeImg8@3x.png')} alt=""/>
                 </div>
-                <div onClick={ precheck } className="floatingIcon">
-                    <img src={process.env.PUBLIC_URL + 'common/mobile/image/m-floting-apply-btn-110@3x.png'} alt=""/>
+                <div className="floatingIcon">
+                    <Link to='/precheck'><img src={process.env.PUBLIC_URL + 'common/mobile/image/m-floting-apply-btn-110@3x.png'} alt=""/></Link>
                 </div>
             </div>
         );

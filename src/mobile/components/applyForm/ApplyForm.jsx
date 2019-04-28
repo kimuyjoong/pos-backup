@@ -1,8 +1,11 @@
 import React from 'react';
+import { Field, reduxForm } from 'redux-form'
+import { Link } from 'react-router-dom';
 import ('./ApplyForm.scss');
-const ApplyForm = ( {submitform, applysuccess2} ) => {
+
+const ApplyForm = (handleSubmit) => {
     return (
-        <div className="ApplyForm">
+        <form onSubmit={handleSubmit} className="ApplyForm">
             <div className="layoutType1">
                 <div className="topTitleType1 type2">
                     <p className="title1">아래 정보를 <br/>
@@ -12,7 +15,12 @@ const ApplyForm = ( {submitform, applysuccess2} ) => {
                 <div className="formWrap">
                     <p className="title1">회원 정보</p>
                     <p className="title2">이름</p>
-                    <input type="text" value="" placeholder="홍길동" className="inputType1"/>
+                    <Field
+                        name = "name"
+                        component="input"
+                        className="inputType1"
+                        type="text"
+                        placeholder="이름을 입력해 주세요" />
                     <p className="title2">연락처</p>
                     <input type="text" value="010-2321-2321" className="inputType1"/>
                     <p className="title2">이메일</p>
@@ -78,14 +86,16 @@ const ApplyForm = ( {submitform, applysuccess2} ) => {
                     <p className="title2">평균 픽업시간</p>
                     <input type="text" value="10분" className="inputType1"/>
                 </div>
-                <button onClick={ submitform } className="btnType1">신청하기</button>
+                <button className="btnType1"><Link to='/applysuccess'>신청하기</Link></button>
                 <div className="btnSet">
-                    <button className="btnType1 type2 left">취소</button>
-                    <button onClick={ applysuccess2 } className="btnType1 right">완료</button>
+                    <button className="btnType1 type2 left"><Link to='/applyreject'>취소</Link></button>
+                    <button className="btnType1 right"><Link to='/applyapprove'>완료</Link></button>
                 </div>
 
             </div>
-        </div>
+        </form>
     );
 };
-export default ApplyForm;
+export default reduxForm({
+    form: 'apply'
+})(ApplyForm)

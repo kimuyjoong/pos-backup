@@ -1,9 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { makeImagePath } from "../util/path";
-import { connect, bindActionCreators } from 'redux';
-import { navChange } from '../../actions';
 
-const Header = ({gohome, navi, nav, precheck, home, appyform, applysuccess, applysuccess2, proposal, proposalsuccess}) => {
+const Header = ({ navi, nav, precheck, home, appyform, applysuccess, applysuccess2, proposal, proposalsuccess}) => {
     return (
         <header>
             <div className="Header">
@@ -12,8 +11,8 @@ const Header = ({gohome, navi, nav, precheck, home, appyform, applysuccess, appl
                         <img src={makeImagePath('common/mobile/image/m-icon-menu-black-26@3x.png')}/> :
                         <img src={makeImagePath('common/mobile/image/nav-close@3x.png')}/>}
                 </button>
-                <p onClick={ gohome } className="HeaderTitle">
-                    <img src={makeImagePath('common/mobile/image/m-logo-black-beta@3x.png')} alt=""/>
+                <p className="HeaderTitle">
+                    <Link to='/'><img src={makeImagePath('common/mobile/image/m-logo-black-beta@3x.png')} alt=""/></Link>
                 </p>
 
                 { home === true ?
@@ -40,19 +39,4 @@ const Header = ({gohome, navi, nav, precheck, home, appyform, applysuccess, appl
     );
 };
 
-const mapStateToProps = (state) => {
-    return {
-        nav: state.header.nav
-    }
-}
-
-const mapDispatchToProps = (dispatch) => {
-    return {
-        onNavChange: bindActionCreators(navChange, dispatch)
-    }
-};
-
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(Header);
+export default Header
