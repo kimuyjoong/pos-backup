@@ -5,7 +5,8 @@ import Footer from '../components/footer/Footer';
 import Home from '../components/home/Home';
 import Nav from '../components/nav/Nav';
 import PreCheck from '../components/preCheck/PreCheck';
-import ApplyForm from "../components/applyForm/ApplyForm";
+// import ApplyForm from "../components/applyForm/ApplyForm";
+import ApplyFormContainer from "./ApplyFormContainer";
 import ApplySuccess from "../components/applySuccess/ApplySuccess";
 import ApplyApprove from "../components/applyApprove/ApplyApprove";
 import ApplyReject from "../components/applyReject/ApplyReject";
@@ -39,7 +40,7 @@ class Container extends PureComponent{
                 <Route exact path="/" component={Home} />
                 <Route exact path="/#section3" component={Home} />
                 <Route path="/precheck" component={PreCheck} />
-                <Route path="/applyform" component={ApplyForm} />
+                <Route path="/applyform" component={ApplyFormContainer} />
                 <Route path="/applysuccess" component={ApplySuccess} />
                 <Route path="/applyapprove" component={ApplyApprove} />
                 <Route path="/applyreject" component={ApplyReject} />

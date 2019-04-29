@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import {connect} from "react-redux";
 
 import ('./ApplySuccess.scss');
 
-const ApplySuccess = ( {applysuccess}) => {
+const ApplySuccess = ( {formvalue}) => {
     return (
         <div className="ApplySuccess">
             <div className="layoutType1">
@@ -16,7 +17,7 @@ const ApplySuccess = ( {applysuccess}) => {
                         <div className="leftside">회원 정보</div>
                         <div className="rightside">
                             <ul className="infoList">
-                                <li>홍길동</li>
+                                <li>{formvalue.name}</li>
                                 <li>010-1234-5678</li>
                                 <li>user@woowahan.com</li>
                             </ul>
@@ -50,9 +51,18 @@ const ApplySuccess = ( {applysuccess}) => {
                     </div>
                 </div>
                 <button className="btnType1"><Link to='/applyform'>신청 정보 수정하기</Link></button>
-
             </div>
         </div>
     );
 };
-export default ApplySuccess;
+
+const mapStateToProps = (state) => {
+    console.log('mapStatePropsApplysuccess: ', state);
+    return {
+        formvalue: state.form.apply.values
+    }
+};
+
+export default connect(
+    mapStateToProps,
+)(ApplySuccess);

@@ -51,7 +51,7 @@ class Header extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-    console.log('mapStateProps: ', state);
+    // console.log('mapStateProps: ', state);
     return {
         nav: state.Header.nav,
         testJSON: state.Header
