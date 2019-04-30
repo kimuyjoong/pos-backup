@@ -12,17 +12,15 @@ class Nav extends Component{
         onNavChangeOff()
     }
     render(){
-        const { nav } = this.props;
         return(
             <div className="Nav">
                 <div className="NavWrap">
                     <ul className="NavList" onClick={() => this.handleNavOff()}>
-                        <li><Link to='/'>사장님 사이트 로그인하기</Link></li>
+                        <li><a href="https://ceo.baemin.com/web/login?returnUrl=https%3A%2F%2Fceo.baemin.com%2F">사장님 사이트 로그인하기</a></li>
                         <li><Link to='/#section3'>배민포스란?</Link></li>
                         <li><a href="#section4">배민포스 미리보기</a></li>
                         <li><Link to='/applyform'>배민포스 신청하기</Link></li>
                         <li><Link to='/proposal'>배민포스 제휴 문의하기</Link></li>
-                        {/*<li onClick={ proposal }>배민포스 제휴 문의하기</li>*/}
                     </ul>
                     <div className="manualDown">
                         <div className="imgBtnWrap">

@@ -1,68 +1,80 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import {connect} from "react-redux";
+import { connect } from "react-redux";
+// import { bindActionCreators } from "redux";
+// import { navChangeOff } from "../../actions";
 
+import { Link } from 'react-router-dom';
 import ('./ApplySuccess.scss');
 
-const ApplySuccess = ( {formvalue}) => {
-    return (
-        <div className="ApplySuccess">
-            <div className="layoutType1">
-                <div className="topTitleType1">
-                    <p className="title1">신청 완료! <br/>
-                        내용을 확인 중입니다.</p>
+
+class ApplySuccess extends React.Component{
+    render(){
+        const { values } = this.props;
+        return (
+            <div className="ApplySuccess">
+                <div className="layoutType1">
+                    <div className="topTitleType1">
+                        <p className="title1">신청 완료! <br/>
+                            내용을 확인 중입니다.</p>
+                    </div>
+                    <div className="confirmList">
+                        <div className="listWrap">
+                            <div className="leftside">회원 정보</div>
+                            <div className="rightside">
+                                <ul className="infoList">
+                                    <li>{values.name}</li>
+                                    <li>{values.phoneNumber}</li>
+                                    <li>{values.email}</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div className="listWrap">
+                            <div className="leftside">사업자 등록 정보</div>
+                            <div className="rightside">
+                                <ul className="infoList">
+                                    <li>{values.businessnumber}</li>
+                                    <li>{values.businessownername}</li>
+                                    <li>{values.businessbirthday}</li>
+                                    <li>{values.businessname}</li>
+                                    <li>{values.businessaddress}</li>
+                                    <li className="address">{values.businessaddressroad}</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div className="listWrap">
+                            <div className="leftside">결제 / 배달 정보</div>
+                            <div className="rightside">
+                                <ul className="infoList">
+                                    <li>{values.paymethod}</li>
+                                    <li>{values.deliveryuse}</li>
+                                    <li>{values.paymethodsecond}</li>
+                                    <li>{values.deliveryarea}</li>
+                                    <li>{values.pickuptime}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <button className="btnType1"><Link to='/applyform'>신청 정보 수정하기</Link></button>
                 </div>
-                <div className="confirmList">
-                    <div className="listWrap">
-                        <div className="leftside">회원 정보</div>
-                        <div className="rightside">
-                            <ul className="infoList">
-                                <li>{formvalue.name}</li>
-                                <li>010-1234-5678</li>
-                                <li>user@woowahan.com</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div className="listWrap">
-                        <div className="leftside">사업자 등록 정보</div>
-                        <div className="rightside">
-                            <ul className="infoList">
-                                <li>김배달</li>
-                                <li>840125</li>
-                                <li>999-99-99999</li>
-                                <li>갓치킨</li>
-                                <li>서울시 송파구 방이동</li>
-                                <li className="address">서울시 송파구 위례성대로
-                                    주소두줄</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div className="listWrap">
-                        <div className="leftside">결제 / 배달 정보</div>
-                        <div className="rightside">
-                            <ul className="infoList">
-                                <li>나이스정보통신(NICE)</li>
-                                <li>배달대행 사용</li>
-                                <li>최강배달</li>
-                                <li>잠실점</li>
-                                <li>평균 픽업시간 10분</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <button className="btnType1"><Link to='/applyform'>신청 정보 수정하기</Link></button>
             </div>
-        </div>
-    );
-};
+        );
+    }
+}
 
 const mapStateToProps = (state) => {
-    console.log('mapStatePropsApplysuccess: ', state);
+    console.log('mapStatePropsApply: ', state);
+    // form: state.form
     return {
-        formvalue: state.form.apply.values
+        values: state.form.apply.values
     }
 };
 
+// function mapStateToProps(state) {
+//     return { form: state.form }
+// }
+//
 export default connect(
     mapStateToProps,
 )(ApplySuccess);
+
+// export default ApplySuccess;

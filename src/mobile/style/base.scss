@@ -69,6 +69,35 @@
   }
 }
 
+.reduxFormValidate{
+  input[type=text]{
+    border:1px solid #9b9b9b;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 20px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    width: 100%;
+    font-size: 16px;
+    &.error{
+      border: solid 2px #ca0000;
+    }
+    &:focus{
+      border: solid 2px #2d2d2d;
+      outline:none;
+    }
+  }
+  .renderLabel{
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+  .errorMsg{
+    color: #ca0000;
+    display: block;
+    margin-bottom: 10px;
+  }
+}
+
 .inputType1{
   border:1px solid #9b9b9b;
   height: 50px;

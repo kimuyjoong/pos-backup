@@ -4,13 +4,13 @@ export const navChange = () => {
     return {
         type: NAV
     }
-}
+};
 
 export const navChangeOff = () => {
     return {
         type: NAV_OFF
     }
-}
+};
 
 export const getTestApi = () => {
     return async function(dispatch) {

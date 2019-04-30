@@ -49,7 +49,7 @@ let ApplyForm = (props) => {
                     />
                     <p className="title2">사업자명</p>
                     <Field
-                        name="businessname"
+                        name="businessownername"
                         component="input"
                         className="inputType1"
                         type="text"
@@ -115,10 +115,10 @@ let ApplyForm = (props) => {
                                 component="input"
                                 type="radio"
                                 className="radio"
-                                name="type1"
+                                name="deliveryuse"
                                 id="radio1"
+                                value="사용"
                             />
-                            {/*<input type="radio" defaultChecked="checked" id="radio1" name="type1" className="radio"/>*/}
                             <label htmlFor="radio1">사용</label>
                         </div>
                         <div className="radioType1">
@@ -126,8 +126,9 @@ let ApplyForm = (props) => {
                                 component="input"
                                 type="radio"
                                 className="radio"
-                                name="type1"
+                                name="deliveryuse"
                                 id="radio2"
+                                value="미사용"
                             />
                             <label htmlFor="radio2">미사용</label>
                         </div>
@@ -161,7 +162,7 @@ let ApplyForm = (props) => {
                         type="text"
                     />
                 </div>
-                <button className="btnType1"><Link to='/applysuccess'>신청하기</Link></button>
+                <button type="submit" className="btnType1"><Link to='/applysuccess'>신청하기</Link></button>
                 <div className="btnSet">
                     <button className="btnType1 type2 left"><Link to='/applyreject'>취소</Link></button>
                     <button className="btnType1 right"><Link to='/applyapprove'>완료</Link></button>
@@ -172,7 +173,8 @@ let ApplyForm = (props) => {
 };
 
 ApplyForm = reduxForm({
-    form: 'apply'
+    form: 'apply',
+    destroyOnUnmount: false
 })(ApplyForm);
 
 ApplyForm = connect(

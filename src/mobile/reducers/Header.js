@@ -25,7 +25,7 @@ const header = (state = headerInitialState, action) => {
             return {
                 ...state,
                 testJSON: action.response
-            }
+            };
         default:
             return state;
     }
