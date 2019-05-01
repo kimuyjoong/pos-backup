@@ -54,6 +54,12 @@
   line-height: 60px;
   display: block;
   margin:0 auto;
+  &:disabled{
+    opacity:.5;
+  }
+  a{
+    display: block;
+  }
 }
 
 .formWrap{
@@ -70,7 +76,7 @@
 }
 
 .reduxFormValidate{
-  input[type=text]{
+  input[type=text],input[type=number]{
     border:1px solid #9b9b9b;
     height: 50px;
     line-height: 50px;
@@ -95,6 +101,65 @@
     color: #ca0000;
     display: block;
     margin-bottom: 10px;
+  }
+  textarea{
+    border:1px solid #9b9b9b;
+    height: 172px;
+    padding: 17px 20px 0 20px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    width: 100%;
+    font-size: 16px;
+    &.error{
+      border: solid 2px #ca0000;
+    }
+    &:focus{
+      border: solid 2px #2d2d2d;
+      outline:none;
+    }
+  }
+  .addFileWrap{
+    position: relative;
+    height: 50px;
+    margin-bottom: 20px;
+    input{
+      position: absolute;
+      left:0;
+      right:0;
+      top:15px;
+      z-index: 3;
+      bottom:0;
+      width: 70%;
+      height: 100%;
+      visibility: visible;
+      &:focus{
+        outline:none
+      }
+    }
+    label{
+      border:1px solid #9b9b9b;
+      height: 50px;
+      display: block;
+      position: relative;
+      background: #fff;
+      line-height: 50px;
+      padding-left: 20px;
+      box-sizing: border-box;
+      color: #9b9b9b;
+      &:after{
+        content: '찾아보기';
+        position: absolute;
+        right:0;
+        top:0;
+        width: 100px;
+        color: #2d2d2d;
+        height: 48px;
+        border-left: 1px solid #9b9b9b;
+        line-height: 50px;
+        text-align: center;
+        background: #eee;
+      }
+    }
   }
 }
 

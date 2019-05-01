@@ -1,10 +1,9 @@
 import React from 'react';
 import Proposal from '../components/proposal/Proposal';
 
-
-class ProposalContainer extends React.PureComponent {
+class ProposalContainer extends React.Component {
     handleSubmit (e) {
-        console.log(e)
+        console.log('xxx')
     }
     render() {
         return (

@@ -1,8 +1,12 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form'
 import { connect } from 'react-redux'
-// import { required, email } from 'redux-form-validators'
 import { Link } from 'react-router-dom';
+import { renderField, renderFieldArea } from '../validate/Validate'
+import Fileupload from '../validate/Fileupload'
+import ApplyForm from "../applyForm/ApplyForm";
+
+
 import ('./Proposal.scss');
 
 const required = value => value ? undefined : '필수값입니다'
@@ -10,33 +14,15 @@ const maxLength = max => value =>
     value && value.length > max ? `최대값 ${max} 을(를) 넘기실수 없습니다.` : undefined
 const maxLength15 = maxLength(15)
 const number = value => value && isNaN(Number(value)) ? '숫자만 입력해주세요' : undefined
-const minValue = min => value =>
-    value && value < min ? `최소값은 ${min} 입니다.` : undefined
-const minValue18 = minValue(18)
 const email = value =>
     value && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value) ?
-        '유효한 이메일을 입력해주세요' : undefined
-const tooOld = value =>
-    value && value > 65 ? 'You might be too old for this' : undefined
-const aol = value =>
-    value && /.+@aol\.com/.test(value) ?
-        'Really? You still use AOL for your email?' : undefined
-
-const renderField = ({ input, label, type, meta: { touched, error, warning } }) => (
-    <div>
-        <label className="renderLabel">{label}</label>
-        <div>
-            <input {...input} type={type}/>
-            {touched && ((error && <span className="errorMsg">{error}</span>) || (warning && <span className="errorMsg">{warning}</span>))}
-        </div>
-    </div>
-)
-
+        '유효한 이메일을 입력해주세요' : undefined;
 
 let Proposal = (props) => {
-    const { handleSubmit } = props;
+    const { handleSubmit,pristine, submitting, onSubmit } = props;
+
     return (
-        <form onSubmit={handleSubmit} className="ApplyForm" action="">
+        <form onSubmit={onSubmit} className="ApplyForm" action="">
         <div className="Proposal">
             <div className="layoutType1">
                 <div className="topTitleType1 type3">
@@ -92,11 +78,10 @@ let Proposal = (props) => {
                             <div className="radioType2">
                                 <Field
                                     component="input"
-                                    type="radio"
+                                    type="checkbox"
                                     className="radio"
-                                    name="radioset"
+                                    name="dll"
                                     id="inqueryRadio1"
-                                    // checked="checked"
                                     value="DLL"
                                 />
                                 <label htmlFor="inqueryRadio1">DLL</label>
@@ -104,9 +89,9 @@ let Proposal = (props) => {
                             <div className="radioType2">
                                 <Field
                                     component="input"
-                                    type="radio"
+                                    type="checkbox"
                                     className="radio"
-                                    name="radioset"
+                                    name="api"
                                     id="inqueryRadio2"
                                     value="API"
                                 />
@@ -114,60 +99,55 @@ let Proposal = (props) => {
                             </div>
                         </div>
                     </div>
-                    <p className="title2">소속</p>
                     <Field
                         name = "group"
                         component="input"
                         className="inputType1"
                         type="text"
+                        component={renderField}
+                        label="소속"
+                        validate={[ required, maxLength15 ]}
                     />
                     <Field
                         name = "name"
                         // component="input"
-                        className="inputType1"
                         type="text"
                         component={renderField}
                         label="이름"
-                        value=" "
                         validate={[ required, maxLength15 ]}
                     />
-                    <p className="title2">연락처</p>
                     <Field
                         name = "number"
-                        component="input"
-                        className="inputType1"
-                        type="text"
+                        component={renderField}
+                        type="number"
+                        label="연락처"
+                        validate={[ required, number ]}
                     />
-                    <p className="title2">이메일</p>
                     <Field
                         name = "email"
-                        type="input"
-                        component="input"
-                        className="inputType1"
-                        // type="text"
+                        component={renderField}
+                        type="text"
+                        label="이메일"
+                        validate={[ required, email ]}
                     />
-                    <p className="title2">내용</p>
                     <Field
                         name = "content"
-                        component="textarea"
-                        className="textAreaType1 type2"
+                        component={renderFieldArea}
                         type="textarea"
-                        placeholder="자세한 내용을 입력해 주세요.
-준비된 제안서가 있을 경우 첨부해 주시면
-내용을 파악하는 데 도움이 됩니다."
+                        label="내용"
+                        validate={[ required ]}
                     />
                     <p className="title2">첨부파일</p>
-                    <div className="addFileWrap">
+                    {/*<div className="addFileWrap">*/}
+                        {/*<div className="addFileWrap">*/}
                         <Field
-                            component="input"
-                            name = "addFile"
-                            className="inputType1"
-                            id="addFile"
                             type="file"
-                            value={null}
+                            name = "addFile"
+                            component={Fileupload}
+                            id="addFile"
                         />
-                        <label htmlFor="addFile">첨부파일</label>
-                    </div>
+                        {/*<label htmlFor="addFile">첨부파일</label>*/}
+                    {/*</div>*/}
                     <p className="title2">개인 정보처리 방침</p>
                     <Field
                         name = "personal"
@@ -191,7 +171,7 @@ let Proposal = (props) => {
                     </div>
                 </div>
 
-                <button type="submit" className="btnType1"><Link to='/proposalsuccess'>신청하기</Link></button>
+                <button type="submit" onClick={onSubmit} disabled={pristine || submitting} className="btnType1"><Link to='/proposalsuccess'>신청하기</Link></button>
 
             </div>
         </div>
@@ -206,7 +186,25 @@ let Proposal = (props) => {
 //
 // export default Proposal;
 
+Proposal = reduxForm({
+    form: 'fieldLevelValidation',
+    destroyOnUnmount: false
+})(Proposal);
 
-export default reduxForm({
-    form: 'fieldLevelValidation' // a unique identifier for this form
-})(Proposal)
+Proposal = connect(
+    state => ({
+        initialValuesProposal: {
+            addFile: true
+        }
+    })
+)(Proposal);
+
+export default Proposal;
+
+
+
+// export default reduxForm({
+//     form: 'fieldLevelValidation', // a unique identifier for this form
+//     destroyOnUnmount: false
+//
+// })(Proposal)
