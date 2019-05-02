@@ -1,4 +1,4 @@
-import { NAV, NAV_OFF, TEST_API, TEST_API_ERROR } from './ActionTypes.js';
+import { NAV, NAV_OFF, NAV_LINK, TEST_API, TEST_API_ERROR } from './ActionTypes.js';
 
 export const navChange = () => {
     return {
@@ -9,6 +9,13 @@ export const navChange = () => {
 export const navChangeOff = () => {
     return {
         type: NAV_OFF
+    }
+};
+
+export const navLink = (e) => {
+    return {
+        type: NAV_LINK,
+        e
     }
 };
 

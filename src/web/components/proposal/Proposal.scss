@@ -1,0 +1,28 @@
+.inquiryList{
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  margin-bottom: 25px;
+  margin-top: 7px;
+  li{
+    display: table-cell;
+    height: 50px;
+    line-height: 50px;
+    font-size: 16px;
+    text-align: center;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background: #fff;
+    border:1px solid #9b9b9b;
+    border-right: none;
+    &:last-child{
+      border-right: 1px solid #9b9b9b;
+    }
+    &.on{
+      color: #fff;
+      background: #2d2d2d;
+    }
+  }
+}
+

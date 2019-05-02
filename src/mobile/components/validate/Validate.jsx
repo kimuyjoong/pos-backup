@@ -40,3 +40,14 @@ export const renderFieldArea = ({ input, label, type, meta: { touched, error, wa
         </div>
     </div>
 );
+
+export const renderFieldArea2 = ({ input, label, type, meta: { touched, error, warning } }) => (
+    <div>
+        <label className="renderLabel">{label}</label>
+        <div>
+            <textarea {...input} value="(주)우아한형제들(이하 ‘회사’라 한다)은 정보통신망 이용촉진 및 정보보호 등에 관한 법률, 개인정보보호법 등 관련 법령(이하 “관련 법령” 이라 함)에 따라 이용자의 개인정보를 보호하고, 이와 관련한 고충을 신속하고 원활하게 처리할 수 있도록 하기 위하여 다음과 같이 개인정보처리방침을 수립합니다.
+이와 관련한 고충을 신속하고 원활하게 처리할 수 있도록 하기 위하여 다음과 같이 개인정보처리방침을 수립합니다." />
+            {touched && ((error && <span className="errorMsg">{error}</span>) || (warning && <span className="errorMsg">{warning}</span>))}
+        </div>
+    </div>
+);

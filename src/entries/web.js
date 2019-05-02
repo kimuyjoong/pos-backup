@@ -6,12 +6,9 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import './mobile/style/reset.scss';
-import './mobile/style/layout.scss';
-import './mobile/style/base.scss';
-import Container from './mobile/containers/Container';
-import * as serviceWorker from './serviceWorker';
-import reducer from './mobile/reducers';
+import '../web/style/base.scss';
+import App from '../web/app/App';
+import reducer from '../web/reducers';
 
 const store = createStore(
     reducer,
@@ -22,10 +19,8 @@ ReactDOM.render(
     <Provider store={store}>
         <BrowserRouter>
             <ScrollToTop>
-                <Container />
+                <App />
             </ScrollToTop>
         </BrowserRouter>
     </Provider>,
     document.getElementById('root'));
-
-serviceWorker.unregister();

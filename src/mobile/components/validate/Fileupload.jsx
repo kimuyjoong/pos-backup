@@ -6,6 +6,22 @@ class Fileupload extends React.Component {
         isShow: true
     };
 
+    filecheck = () => {
+        //용량체크
+        if(document.getElementById("addFile").value!=""){
+            var fileSize = document.getElementById("addFile").files[0].size;
+            var maxSize = 3 * 1024 * 1024;//3MB
+
+            if(fileSize > maxSize){
+                alert("첨부파일 사이즈는 3MB 이내로 등록 가능합니다. ");
+                document.getElementById("addFile").value='';
+                return;
+            }
+        }
+    }
+
+
+
     render() {
         const {values, input, type, meta: { touched, error, warning } } = this.props;
         delete input.value;

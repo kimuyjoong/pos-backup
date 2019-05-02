@@ -16,6 +16,11 @@ const header = (state = headerInitialState, action) => {
                 ...state,
                 nav: false
             };
+        case Types.NAV_LINK:
+            return {
+                ...state,
+                link: action.e
+            };
         case Types.TEST_API:
             return {
                 ...state,

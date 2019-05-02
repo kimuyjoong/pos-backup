@@ -8,7 +8,8 @@ const Home = ( ) =>{
         return (
             <div className="Home">
                 <p className="HomeBanner">
-                    <Link to='/precheck'><img src={process.env.PUBLIC_URL + 'common/mobile/image/m-banner@3x.png'} alt=""/></Link>
+                    {/*<Link to='/precheck'><img src={process.env.PUBLIC_URL + 'common/mobile/image/m-banner@3x.png'} alt=""/></Link>*/}
+                    <Link to='/'><img src={process.env.PUBLIC_URL + 'common/mobile/image/m-banner@3x.png'} alt=""/></Link>
                 </p>
                 <div className="section1">
                     <p className="text1">
@@ -77,15 +78,15 @@ const Home = ( ) =>{
                         사장님은 <br/>
                         매출에 집중하세요.
                     </p>
-                    <div className="btnWrap">
-                        <Link to='/precheck'><button className="applyBtn">신청하기</button></Link>
-                        <img src={makeImagePath('common/mobile/image/applyBtnRight@3x.png')} alt=""/>
-                    </div>
+                    {/*<div className="btnWrap">*/}
+                        {/*<Link to='/precheck'><button className="applyBtn">신청하기</button></Link>*/}
+                        {/*<img src={makeImagePath('common/mobile/image/applyBtnRight@3x.png')} alt=""/>*/}
+                    {/*</div>*/}
                     <img className="botImg" src={makeImagePath('common/mobile/image/homeImg8@3x.png')} alt=""/>
                 </div>
-                <div className="floatingIcon">
-                    <Link to='/precheck'><img src={process.env.PUBLIC_URL + 'common/mobile/image/m-floting-apply-btn-110@3x.png'} alt=""/></Link>
-                </div>
+                {/*<div className="floatingIcon">*/}
+                    {/*<Link to='/precheck'><img src={process.env.PUBLIC_URL + 'common/mobile/image/m-floting-apply-btn-110@3x.png'} alt=""/></Link>*/}
+                {/*</div>*/}
             </div>
         );
 };

@@ -36,13 +36,15 @@ const useYarn = fs.existsSync(paths.yarnLockFile);
 const isInteractive = process.stdout.isTTY;
 
 // Warn and crash if required files are missing
-if (!checkRequiredFiles([paths.appHtml, paths.appIndexJs])) {
+if (!checkRequiredFiles([paths.mobileHtml, paths.appMobileJs])) {
   process.exit(1);
 }
 
 // Tools like Cloud9 rely on this.
 const DEFAULT_PORT = parseInt(process.env.PORT, 10) || 3000;
+// const DEFAULT_PORT = parseInt(process.env.PORT, 10) || 'local.baemin1.com';
 const HOST = process.env.HOST || '0.0.0.0';
+// const HOST = 'local.baemin.com';
 
 if (process.env.HOST) {
   console.log(

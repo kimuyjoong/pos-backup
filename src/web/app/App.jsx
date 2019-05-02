@@ -1,21 +1,18 @@
 import React, { PureComponent }  from 'react';
 import { Route } from 'react-router-dom';
-// import Header from '../components/header/Header';
 import Footer from '../components/footer/Footer';
 import Home from '../components/home/Home';
 import Nav from '../components/nav/Nav';
 import PreCheck from '../components/preCheck/PreCheck';
-// import ApplyForm from "../components/applyForm/ApplyForm";
-import ApplyFormContainer from "./ApplyFormContainer";
-import ProposalContainer from "./ProposalContainer";
+import ApplyFormContainer from "../containers/ApplyFormContainer";
+import ProposalContainer from "../containers/ProposalContainer";
 import ApplySuccess from "../components/applySuccess/ApplySuccess";
 import ApplyApprove from "../components/applyApprove/ApplyApprove";
 import ApplyReject from "../components/applyReject/ApplyReject";
-import Proposal from "../components/proposal/Proposal";
 import ProposalSuccess from "../components/proposalSuccess/ProposalSuccess1";
-import Header2 from './Header';
+import Header from '../containers/HeaderContainer';
 
-class Container extends PureComponent{
+class App extends PureComponent{
     state = {
         icon: false,
         nav: false,
@@ -37,7 +34,8 @@ class Container extends PureComponent{
         const { nav } = this.state;
         const {  navOn } = this;
         return (
-            <div className="Mobile-Wrap">
+            <div className="Web-Wrap">
+                <Header />
                 <Route exact path="/" component={Home} />
                 <Route exact path="/#section3" component={Home} />
                 <Route path="/precheck" component={PreCheck} />
@@ -47,9 +45,6 @@ class Container extends PureComponent{
                 <Route path="/applyreject" component={ApplyReject} />
                 <Route path="/proposal" component={ProposalContainer} />
                 <Route path="/proposalsuccess" component={ProposalSuccess} />
-
-                <Header2 />
-                {/*<Header navi={navOn} nav={nav}/>*/}
                 {
                     nav === true ? <Nav navi={navOn} /> : ''
                 }
@@ -60,4 +55,4 @@ class Container extends PureComponent{
     }
 };
 
-export default Container;
+export default App;
