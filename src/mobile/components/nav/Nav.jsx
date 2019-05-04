@@ -24,7 +24,7 @@ class Nav extends Component{
             <div className="Nav">
                 <div className="NavWrap">
                     <ul className="NavList" onClick={() => this.handleNavOff()}>
-                        <li><a href="https://betaceo.baemin.com/login?returnUrl=http://localhost:3000/">사장님 사이트 로그인하기</a></li>
+                        <li><a href="https://betaceo.baemin.com/login?returnUrl=http://local.baemin.com:3000/">사장님 사이트 로그인하기</a></li>
                         <li onClick={() => this.handleNavLink('home')}><a href="#section3">배민포스란?</a></li>
                         <li onClick={() => this.handleNavLink('home')}><a href="#section4">배민포스 미리보기</a></li>
                         {/*<li><Link to='/applyform'>배민포스 신청하기</Link></li>*/}

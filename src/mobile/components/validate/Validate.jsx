@@ -51,3 +51,23 @@ export const renderFieldArea2 = ({ input, label, type, meta: { touched, error, w
         </div>
     </div>
 );
+
+export const renderFieldCheck = ({ input, label, type, id, labelClass, checked, meta: { touched, error, warning } }) => (
+    <div>
+        {/*<div>*/}
+        <input {...input} id={id} defaultChecked={checked} type={type}/>
+        <label htmlFor={id} className={labelClass}>{label}</label>
+        {touched && ((error && <span className="errorMsg">{error}</span>) || (warning && <span className="errorMsg">{warning}</span>))}
+        {/*</div>*/}
+    </div>
+);
+
+export const renderFieldRadio = ({ input, label, type, id, labelClass, checked, meta: { touched, error, warning } }) => (
+    <>
+        <input {...input} id={id} type={type}/>
+        <label htmlFor={id} className={labelClass}>{label}</label>
+        <div className="spanWrap">
+            {touched && ((error && <span className="errorMsg">{error}</span>) || (warning && <span className="errorMsg">{warning}</span>))}
+        </div>
+    </>
+);

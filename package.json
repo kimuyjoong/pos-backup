@@ -65,8 +65,10 @@
     "workbox-webpack-plugin": "4.2.0"
   },
   "scripts": {
-    "start": "node scripts/start.js",
-    "build": "node scripts/build.js",
+    "start-pc": "REACT_ENTRY=pc node scripts/start.js",
+    "start-mobile": "REACT_ENTRY=mobile node scripts/start.js",
+    "build-pc": "REACT_ENTRY=pc node scripts/build.js",
+    "build-mobile": "REACT_ENTRY=mobile node scripts/build.js",
     "test": "node scripts/test.js"
   },
   "eslintConfig": {
@@ -130,7 +132,8 @@
     "watchPlugins": [
       "jest-watch-typeahead/filename",
       "jest-watch-typeahead/testname"
-    ]
+    ],
+    "homepage": "http://kimuyjoong.github.io/pos-backup"
   },
   "babel": {
     "presets": [

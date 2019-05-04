@@ -96,6 +96,24 @@
       outline:none;
     }
   }
+  .radioWrap{
+    .radioType1{
+      position: relative;
+      .spanWrap{
+        position: absolute;
+        width: 168px;
+        left:0px;
+        margin-top: 3px;
+      }
+    }
+  }
+  .radioType2{
+    .renderLabel2{
+      font-size: 20px;
+      display: inline-block;
+      position: relative;
+    }
+  }
   .renderLabel{
     font-size: 14px;
     margin-bottom: 4px;

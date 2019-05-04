@@ -51,7 +51,7 @@ class Fileupload extends React.Component {
 // export default Fileupload;
 
 const mapStateToProps = (state) => {
-    console.log('mapStatePropsFile: ', state);
+    // console.log('mapStatePropsFile: ', state);
     // form: state.form
     return {
         values: state.form

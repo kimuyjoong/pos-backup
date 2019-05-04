@@ -7,6 +7,7 @@ const url = require('url');
 // Make sure any symlinks in the project folder are resolved:
 // https://github.com/facebook/create-react-app/issues/637
 const appDirectory = fs.realpathSync(process.cwd());
+const isPc = process.env.REACT_ENTRY === 'pc'
 const resolveApp = relativePath => path.resolve(appDirectory, relativePath);
 
 const envPublicUrl = process.env.PUBLIC_URL;
@@ -23,7 +24,7 @@ function ensureSlash(inputPath, needsSlash) {
 }
 
 const getPublicUrl = appPackageJson =>
-  envPublicUrl || require(appPackageJson).homepage;
+    envPublicUrl || require(appPackageJson).homepage;
 
 // We use `PUBLIC_URL` environment variable or "homepage" field to infer
 // "public path" at which the app is served.
@@ -34,7 +35,7 @@ const getPublicUrl = appPackageJson =>
 function getServedPath(appPackageJson) {
   const publicUrl = getPublicUrl(appPackageJson);
   const servedUrl =
-    envPublicUrl || (publicUrl ? url.parse(publicUrl).pathname : '/');
+      envPublicUrl || (publicUrl ? url.parse(publicUrl).pathname : '/');
   return ensureSlash(servedUrl, true);
 }
 
@@ -55,7 +56,7 @@ const moduleFileExtensions = [
 // Resolve file paths in the same order as webpack
 const resolveModule = (resolveFn, filePath) => {
   const extension = moduleFileExtensions.find(extension =>
-    fs.existsSync(resolveFn(`${filePath}.${extension}`))
+      fs.existsSync(resolveFn(`${filePath}.${extension}`))
   );
 
   if (extension) {
@@ -69,14 +70,18 @@ const resolveModule = (resolveFn, filePath) => {
 module.exports = {
   dotenv: resolveApp('.env'),
   appPath: resolveApp('.'),
-  appBuild: resolveApp('build'),
+  appBuild: isPc ?
+      resolveApp('build/pc') :
+      resolveApp('build/mobile'),
   appPublic: resolveApp('public'),
   appHtml: resolveApp('public/index.html'),
   mobileHtml: resolveApp('public/mobile.html'),
   webHtml: resolveApp('public/web.html'),
-  appIndexJs: resolveModule(resolveApp, 'src/index'),
-  appMobileJs: resolveModule(resolveApp, 'src/entries/mobile'),
-  appWebJs: resolveModule(resolveApp, 'src/entries/web'),
+  appIndexJs: isPc ?
+      resolveModule(resolveApp, 'src/entries/web') :
+      resolveModule(resolveApp, 'src/entries/mobile'),
+  mobileIndexJs: resolveModule(resolveApp, 'src/entries/mobile'),
+  webIndexJs: resolveModule(resolveApp, 'src/entries/web'),
   appPackageJson: resolveApp('package.json'),
   appSrc: resolveApp('src'),
   appTsConfig: resolveApp('tsconfig.json'),

@@ -19,9 +19,13 @@ const email = value =>
         '유효한 이메일을 입력해주세요' : undefined;
 
 class Proposal extends React.Component{
-
-render() {
+    handleTab = () => {
+        console.log('handle')
+    };
+    render() {
     const { pristine, submitting, handleSubmit } = this.props;
+
+
     return (
             <form onSubmit={handleSubmit} className="ApplyForm" action="">
                 <div className="Proposal">
@@ -39,7 +43,7 @@ render() {
                             {/*<li>기타</li>*/}
                             {/*</ul>*/}
                             <div className="radioWrap type2">
-                                <div className="radioType1">
+                                <div onClick={this.handleTab()} className="radioType1">
                                     <Field
                                         component="input"
                                         type="radio"
