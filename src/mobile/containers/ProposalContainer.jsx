@@ -10,7 +10,7 @@ import {Link} from "react-router-dom";
 class ProposalContainer extends React.Component {
     handleSubmit(){
         console.log("LoginFormData => ");
-        window.location.href="/proposalsuccess";
+        // window.location.href="/proposalsuccess";
     }
     render() {
         return (

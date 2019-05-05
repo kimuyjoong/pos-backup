@@ -34,7 +34,7 @@ class HeaderContainer extends React.Component {
                                 <img src={makeImagePath('common/mobile/image/m-icon-menu-black-26@3x.png')}/> :
                                 <img src={makeImagePath('common/mobile/image/nav-close@3x.png')}/>}
                         </button>
-                        <p className="HeaderTitle" onClick={() => this.handleNav('home')}>
+                        <p className="HeaderTitle">
                             <Link to='/'><img src={makeImagePath('common/mobile/image/m-logo-black-beta@3x.png')} alt=""/></Link>
                         </p>
                         { link === 'proposal' ?

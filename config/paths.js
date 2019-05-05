@@ -74,14 +74,12 @@ module.exports = {
       resolveApp('build/pc') :
       resolveApp('build/mobile'),
   appPublic: resolveApp('public'),
-  appHtml: resolveApp('public/index.html'),
-  mobileHtml: resolveApp('public/mobile.html'),
-  webHtml: resolveApp('public/web.html'),
+  appHtml: isPc ?
+      resolveApp('public/pc/web.html') :
+      resolveApp('public/mobile/mobile.html'),
   appIndexJs: isPc ?
       resolveModule(resolveApp, 'src/entries/web') :
       resolveModule(resolveApp, 'src/entries/mobile'),
-  mobileIndexJs: resolveModule(resolveApp, 'src/entries/mobile'),
-  webIndexJs: resolveModule(resolveApp, 'src/entries/web'),
   appPackageJson: resolveApp('package.json'),
   appSrc: resolveApp('src'),
   appTsConfig: resolveApp('tsconfig.json'),

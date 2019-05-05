@@ -119,8 +119,19 @@ class Proposal2 extends React.PureComponent {
                                             type="checkbox"
                                             className="radio"
                                             name="api"
-                                            id="inqueryRadio2"
+                                            id="checkapi"
                                             label="API"
+                                            labelClass="renderLabel2"
+                                        />
+                                    </div>
+                                    <div className="radioType2 type3" >
+                                        <Field
+                                            component={renderFieldCheck}
+                                            type="checkbox"
+                                            className="radio"
+                                            name="dll"
+                                            id="checkdll"
+                                            label="DLL"
                                             labelClass="renderLabel2"
                                         />
                                     </div>
@@ -212,7 +223,8 @@ export default reduxForm({
     form: 'proposal', // a unique identifier for this form
     initialValues: {
         proposalType: "배달대행",
-        api: true
+        api: true,
+        dll: true
     },
     validate, // <--- validation function given to redux-form
 })(Proposal2)
