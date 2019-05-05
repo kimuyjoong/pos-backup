@@ -68,7 +68,7 @@ class Proposal2 extends React.PureComponent {
                             <p className="title1">소중한 제안을 등록해주세요. <br/>
                                 빨리 연락드리겠습니다.</p>
                         </div>
-                        <img src={process.env.PUBLIC_URL + 'common/mobile/image/m-contact-image@3x.png'} className="proposalImg" alt=""/>
+                        <img src={process.env.PUBLIC_URL + './common/mobile/image/m-contact-image@3x.png'} className="proposalImg" alt=""/>
                         <div className="formWrap reduxFormValidate">
                             <p className="title2">문의구분</p>
                             <div className="radioWrap type2">

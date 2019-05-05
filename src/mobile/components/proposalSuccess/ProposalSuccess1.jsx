@@ -18,7 +18,7 @@ class ProposalSuccess extends React.Component{
                             발송되었습니다. <br/>
                             빨리 연락드리겠습니다.</p>
                     </div>
-                    <img src={process.env.PUBLIC_URL + 'common/mobile/image/m-contact-image-success@3x.png'} className="proposalImg" alt=""/>
+                    <img src={process.env.PUBLIC_URL + './common/mobile/image/m-contact-image-success@3x.png'} className="proposalImg" alt=""/>
                     <button onClick={() => this.handleNavLink('home')} className="btnType1"><Link to='/'>확인</Link></button>
                 </div>
             </div>

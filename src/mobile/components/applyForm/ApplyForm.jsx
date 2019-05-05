@@ -12,7 +12,7 @@ let ApplyForm = (props) => {
                 <div className="topTitleType1 type2">
                     <p className="title1">아래 정보를 <br/>
                         모두 입력해주세요.</p>
-                    <img className="topTitleImg" src={process.env.PUBLIC_URL + 'common/mobile/image/topTitleType2@3x.png'} alt=""/>
+                    <img className="topTitleImg" src={process.env.PUBLIC_URL + './common/mobile/image/topTitleType2@3x.png'} alt=""/>
                 </div>
                 <div className="formWrap">
                     <p className="title1">회원 정보</p>

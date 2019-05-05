@@ -32,7 +32,7 @@ class Nav extends Component{
                     </ul>
                     <div className="manualDown">
                         <div className="imgBtnWrap">
-                            <img className="manualImg" src={process.env.PUBLIC_URL + 'common/mobile/image/navImg@3x.png'} alt=""/>
+                            <img className="manualImg" src={process.env.PUBLIC_URL + './common/mobile/image/navImg@3x.png'} alt=""/>
                             <button className="btnType1">설명서 다운로드</button>
                         </div>
                     </div>

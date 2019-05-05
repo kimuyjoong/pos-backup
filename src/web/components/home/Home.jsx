@@ -8,7 +8,7 @@ const Home = ( ) =>{
         return (
             <div className="Home">
                 <p className="HomeBanner">
-                    <Link to='/precheck'><img src={process.env.PUBLIC_URL + 'common/mobile/image/m-banner@3x.png'} alt=""/></Link>
+                    <Link to='/precheck'><img src={process.env.PUBLIC_URL + './common/mobile/image/m-banner@3x.png'} alt=""/></Link>
                 </p>
                 <div className="section1">
                     <p className="text1">
@@ -20,7 +20,7 @@ const Home = ( ) =>{
                     <img src="./homeImg1@3x.png" alt="" className="img1"/>
                 </div>
                 <div className="section2">
-                    <img src={makeImagePath('common/mobile/image/homeImg2@3x.png')} alt=""/>
+                    <img src={makeImagePath('./common/mobile/image/homeImg2@3x.png')} alt=""/>
                 </div>
                 <div id="section3" className="section3">
                     <p className="text1">
@@ -29,10 +29,10 @@ const Home = ( ) =>{
                         해결해보세요
                     </p>
                     <div className="longLine">
-                        <img src={makeImagePath('common/mobile/image/homeImg3@3x.png')} alt="" className="step1"/>
+                        <img src={makeImagePath('./common/mobile/image/homeImg3@3x.png')} alt="" className="step1"/>
                         <ul className="stepList">
                             <li>
-                                <img className="listImg" src={makeImagePath('common/mobile/image/homeImg4@3x.png')} alt=""/>
+                                <img className="listImg" src={makeImagePath('./common/mobile/image/homeImg4@3x.png')} alt=""/>
                                 <p className="listTit1">
                                     배달의민족 주문
                                 </p>
@@ -43,7 +43,7 @@ const Home = ( ) =>{
                                 </p>
                             </li>
                             <li>
-                                <img className="listImg" src={makeImagePath('common/mobile/image/homeImg5@3x.png')} alt=""/>
+                                <img className="listImg" src={makeImagePath('./common/mobile/image/homeImg5@3x.png')} alt=""/>
                                 <p className="listTit1">
                                     매장 주문
                                 </p>
@@ -54,7 +54,7 @@ const Home = ( ) =>{
                                 </p>
                             </li>
                             <li>
-                                <img className="listImg" src={makeImagePath('common/mobile/image/homeImg6@3x.png')} alt=""/>
+                                <img className="listImg" src={makeImagePath('./common/mobile/image/homeImg6@3x.png')} alt=""/>
                                 <p className="listTit1">
                                     배달대행
                                 </p>
@@ -68,7 +68,7 @@ const Home = ( ) =>{
                     </div>
                 </div>
                 <div id="section4" className="section4">
-                    <img className="videoImage" src={makeImagePath('common/mobile/image/homeImg7@3x.png')} alt=""/>
+                    <img className="videoImage" src={makeImagePath('./common/mobile/image/homeImg7@3x.png')} alt=""/>
                 </div>
                 <div className="section5">
                     <p className="tit1">
@@ -79,12 +79,12 @@ const Home = ( ) =>{
                     </p>
                     <div className="btnWrap">
                         <Link to='/precheck'><button className="applyBtn">신청하기</button></Link>
-                        <img src={makeImagePath('common/mobile/image/applyBtnRight@3x.png')} alt=""/>
+                        <img src={makeImagePath('./common/mobile/image/applyBtnRight@3x.png')} alt=""/>
                     </div>
-                    <img className="botImg" src={makeImagePath('common/mobile/image/homeImg8@3x.png')} alt=""/>
+                    <img className="botImg" src={makeImagePath('./common/mobile/image/homeImg8@3x.png')} alt=""/>
                 </div>
                 <div className="floatingIcon">
-                    <Link to='/precheck'><img src={process.env.PUBLIC_URL + 'common/mobile/image/m-floting-apply-btn-110@3x.png'} alt=""/></Link>
+                    <Link to='/precheck'><img src={process.env.PUBLIC_URL + './common/mobile/image/m-floting-apply-btn-110@3x.png'} alt=""/></Link>
                 </div>
             </div>
         );

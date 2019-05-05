@@ -17,7 +17,7 @@ const ApplyApprove = () => {
                     튜토리얼에 따라 설치해주세요. <br/>
                     바로 사용할 수 있습니다.
                 </p>
-                <img src={process.env.PUBLIC_URL + 'common/mobile/image/m-confirm-image@3x.png'} className="confirmImg" alt=""/>
+                <img src={process.env.PUBLIC_URL + './common/mobile/image/m-confirm-image@3x.png'} className="confirmImg" alt=""/>
                 <button className="btnType1">설치 파일 다운로드</button>
                 <div className="ulWrap">
                     <ul className="leftUl">
@@ -38,7 +38,7 @@ const ApplyApprove = () => {
                 <p className="successTitle2">
                     설치 튜토리얼
                 </p>
-                <img className="" src={process.env.PUBLIC_URL + 'common/mobile/image/homeImg7@3x.png'} alt=""/>
+                <img className="" src={process.env.PUBLIC_URL + './common/mobile/image/homeImg7@3x.png'} alt=""/>
 
             </div>
         </div>

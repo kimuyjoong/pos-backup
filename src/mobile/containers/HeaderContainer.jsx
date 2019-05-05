@@ -13,6 +13,11 @@ class HeaderContainer extends React.Component {
         console.log('testJSON: ', testJSON);
     }
 
+    handleNavLink(e){
+        const { onNavLink } = this.props;
+        onNavLink(e)
+    }
+
     handleNav(){
         const { onNavChange } = this.props;
         onNavChange()
@@ -34,7 +39,7 @@ class HeaderContainer extends React.Component {
                                 <img src={makeImagePath('common/mobile/image/m-icon-menu-black-26@3x.png')}/> :
                                 <img src={makeImagePath('common/mobile/image/nav-close@3x.png')}/>}
                         </button>
-                        <p className="HeaderTitle">
+                        <p className="HeaderTitle" onClick={() => this.handleNavLink('home')}>
                             <Link to='/'><img src={makeImagePath('common/mobile/image/m-logo-black-beta@3x.png')} alt=""/></Link>
                         </p>
                         { link === 'proposal' ?

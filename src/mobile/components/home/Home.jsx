@@ -9,7 +9,7 @@ const Home = ( ) =>{
             <div className="Home">
                 <p className="HomeBanner">
                     {/*<Link to='/precheck'><img src={process.env.PUBLIC_URL + 'common/mobile/image/m-banner@3x.png'} alt=""/></Link>*/}
-                    <Link to='/'><img src={process.env.PUBLIC_URL + 'common/mobile/image/m-banner@3x.png'} alt=""/></Link>
+                    <Link to='/'><img src={process.env.PUBLIC_URL + './common/mobile/image/m-banner@3x.png'} alt=""/></Link>
                 </p>
                 <div className="section1">
                     <p className="text1">
@@ -18,10 +18,10 @@ const Home = ( ) =>{
                         <strong>배달대행</strong>까지 신청하려니 <br/>
                         <strong>너무 힘들어요 . . .</strong>
                     </p>
-                    <img src="./homeImg1@3x.png" alt="" className="img1"/>
+                    <img src={process.env.PUBLIC_URL + './common/mobile/image/homeImg1@3x.png'} alt="" className="img1"/>
                 </div>
                 <div className="section2">
-                    <img src={makeImagePath('common/mobile/image/homeImg2@3x.png')} alt=""/>
+                    <img src={makeImagePath('./common/mobile/image/homeImg2@3x.png')} alt=""/>
                 </div>
                 <div id="section3" className="section3">
                     <p className="text1">
@@ -30,7 +30,7 @@ const Home = ( ) =>{
                         해결해보세요
                     </p>
                     <div className="longLine">
-                        <img src={makeImagePath('common/mobile/image/homeImg3@3x.png')} alt="" className="step1"/>
+                        <img src={makeImagePath('./common/mobile/image/homeImg3@3x.png')} alt="" className="step1"/>
                         <ul className="stepList">
                             <li>
                                 <img className="listImg" src={makeImagePath('common/mobile/image/homeImg4@3x.png')} alt=""/>
