@@ -2,15 +2,13 @@ import React from 'react';
 import { connect } from 'react-redux';
 // import { bindActionCreators } from 'redux';
 // import {navChange, getTestApi, navChangeOff, navLink} from '../actions';
-import Proposal from '../components/proposal/Proposal';
-import Proposal2 from '../components/proposal/Proposal2';
-import {Link} from "react-router-dom";
-// import ProposalSuccess from '../components/proposalSuccess/ProposalSuccess1';
+import Proposal2 from '../components/proposal/Proposal';
 
 class ProposalContainer extends React.Component {
     handleSubmit(){
-        console.log("LoginFormData => ");
-        // window.location.href="/proposalsuccess";
+        // console.log("LoginFormData => ");
+
+        window.location.href="/proposalsuccess";
     }
     render() {
         return (

@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import {navChange, getTestApi, navChangeOff, navLink} from '../actions';
-import {makeImagePath} from "../components/util/path";
+// import {makeImagePath} from "../components/util/path";
 import {Link} from "react-router-dom";
 import Nav from '../components/nav/Nav';
 
@@ -36,11 +36,11 @@ class HeaderContainer extends React.Component {
                     <div className="Header">
                         <button className="HeaderBtn" onClick={() => this.handleNav()}>
                             { nav === false ?
-                                <img src={makeImagePath('common/mobile/image/m-icon-menu-black-26@3x.png')}/> :
-                                <img src={makeImagePath('common/mobile/image/nav-close@3x.png')}/>}
+                                <img src={process.env.PUBLIC_URL + './common/mobile/image/m-icon-menu-black-26@3x.png'} alt=""/> :
+                                <img src={process.env.PUBLIC_URL + './common/mobile/image/nav-close@3x.png'} alt=""/>}
                         </button>
                         <p className="HeaderTitle" onClick={() => this.handleNavLink('home')}>
-                            <Link to='/'><img src={makeImagePath('common/mobile/image/m-logo-black-beta@3x.png')} alt=""/></Link>
+                            <Link to='/'><img src={process.env.PUBLIC_URL + './common/mobile/image/m-logo-black-beta@3x.png'} alt=""/></Link>
                         </p>
                         { link === 'proposal' ?
                             <p className="HeaderRight">제휴 문의</p> :

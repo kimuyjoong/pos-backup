@@ -75,8 +75,8 @@ module.exports = {
       resolveApp('build/mobile'),
   appPublic: resolveApp('public'),
   appHtml: isPc ?
-      resolveApp('public/pc/web.html') :
-      resolveApp('public/mobile/mobile.html'),
+      resolveApp('public/web.html') :
+      resolveApp('public/mobile.html'),
   appIndexJs: isPc ?
       resolveModule(resolveApp, 'src/entries/web') :
       resolveModule(resolveApp, 'src/entries/mobile'),

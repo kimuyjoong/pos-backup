@@ -1,4 +1,13 @@
-import { NAV, NAV_OFF, NAV_LINK, TEST_API, TEST_API_ERROR } from './ActionTypes.js';
+import {
+    NAV,
+    NAV_OFF,
+    NAV_LINK,
+    TEST_API,
+    TEST_API_ERROR,
+    FETCH_LOGIN,
+    FETCH_LOGIN_OUT,
+    FETCH_LOGIN_ERROR
+} from './ActionTypes.js';
 
 export const navChange = () => {
     return {
@@ -36,4 +45,23 @@ export const getTestApi = () => {
             });
         }
     }
-}
+};
+
+export const fetchLoginApi = () => {
+    return async function(dispatch) {
+        try {
+            const responseData = await fetch('https://jsonplaceholder.typicode.com/posts/1');
+            const response = await responseData.json();
+
+            dispatch({
+                type: FETCH_LOGIN,
+                response
+            });
+        } catch(err) {
+            dispatch({
+                type: FETCH_LOGIN_ERROR,
+                err
+            });
+        }
+    }
+};
