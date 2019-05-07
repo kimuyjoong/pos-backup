@@ -83,3 +83,22 @@ export const fetchLoginOut = () => {
         });
     }
 };
+
+export const fetchProposalApi = () => {
+    return async function(dispatch) {
+        try {
+            const responseData = await fetch('https://jsonplaceholder.typicode.com/posts/1');
+            const response = await responseData.json();
+
+            dispatch({
+                type: FETCH_PROPOSAL,
+                response,
+            });
+        } catch(err) {
+            dispatch({
+                type: FETCH_PROPOSAL_ERROR,
+                err
+            });
+        }
+    }
+};
