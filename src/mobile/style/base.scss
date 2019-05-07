@@ -154,10 +154,13 @@
       outline:none;
     }
   }
-  .addFileWrap{
+  .addFileWrap2{
     position: relative;
     height: 50px;
     margin-bottom: 20px;
+    width: 100%;
+    border:1px solid #9b9b9b;
+    box-sizing: border-box;
     input{
       position: absolute;
       left:0;
@@ -173,28 +176,16 @@
       }
     }
     label{
-      border:1px solid #9b9b9b;
-      height: 50px;
-      display: block;
-      position: relative;
-      background: #fff;
+      position: absolute;
+      right:0;
+      top:0;
+      width: 100px;
+      color: #2d2d2d;
+      height: 48px;
+      border-left: 1px solid #9b9b9b;
       line-height: 50px;
-      padding-left: 20px;
-      box-sizing: border-box;
-      color: #9b9b9b;
-      &:after{
-        content: '찾아보기';
-        position: absolute;
-        right:0;
-        top:0;
-        width: 100px;
-        color: #2d2d2d;
-        height: 48px;
-        border-left: 1px solid #9b9b9b;
-        line-height: 50px;
-        text-align: center;
-        background: #eee;
-      }
+      text-align: center;
+      background: #eee;
     }
   }
 }

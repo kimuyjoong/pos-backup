@@ -1,16 +1,12 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import { FETCH_LOGIN, FETCH_LOGIN_ERROR } from '../../actions';
 import { Link } from 'react-router-dom';
-import { fetchLoginApi } from "../../actions";
 import('./Home.scss');
 
-class Home extends React.Component {
-    componentDidMount(){
-        const { onFetchLoginApi } = this.props;
-        onFetchLoginApi()
-    }
+class Home extends React.PureComponent {
+    // componentDidMount(){
+    //     const { onFetchLoginApi } = this.props;
+    //     onFetchLoginApi()
+    // }
     // handleFetchLogin(){
     //     const { onFetchLoginApi } = this.props;
     //     onFetchLoginApi()
@@ -24,7 +20,7 @@ class Home extends React.Component {
                     {/*<Link to='/'><img src='../../image/m-banner@3x.png' alt=""/></Link>*/}
                     <Link to='/'><img src={process.env.PUBLIC_URL + './common/mobile/image/m-banner@3x.png'} alt=""/></Link>
                 </p>
-                <div className="section1" onClick={() => this.handleFetchLogin()}>
+                <div className="section1">
                     <p className="text1">
                         <strong>매장</strong>에 손님이 가득한데 <br/>
                         <strong>배달의민족</strong> 주문은 밀려오고 <br/>
@@ -106,20 +102,4 @@ class Home extends React.Component {
     }
 };
 
-const mapStateToProps = (state) => {
-    return {
-        nav: state.Header.nav,
-        login: state.User.login,
-    }
-};
-
-const mapDispatchToProps = (dispatch) => {
-    return {
-        onFetchLoginApi: bindActionCreators(fetchLoginApi, dispatch)
-    }
-};
-
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(Home);
+export default Home;

@@ -8,9 +8,9 @@ class Fileupload extends React.Component {
         delete input.value;
 
         return (
-            <div className="addFileWrap">
+            <div className="addFileWrap2">
                 <input id="addFile" accept=".pdf, .doc, .docx, .ppt, .pptx, .hwp, .gul, .txt, .xlsx, .xls" {...input} type={type}/>
-                <label htmlFor={input.name}></label>
+                <label htmlFor={input.name}>찾아보기</label>
             </div>
         )
     }

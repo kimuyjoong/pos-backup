@@ -10,6 +10,7 @@ import '../mobile/style/base.scss';
 import App from '../mobile/app/App';
 // import * as serviceWorker from './serviceWorker';
 import reducer from '../mobile/reducers';
+import { CookiesProvider } from 'react-cookie';
 
 const store = createStore(
     reducer,
@@ -20,7 +21,9 @@ ReactDOM.render(
     <Provider store={store}>
         <BrowserRouter>
             <ScrollToTop>
-                <App />
+                <CookiesProvider>
+                    <App />
+                </CookiesProvider>
             </ScrollToTop>
         </BrowserRouter>
     </Provider>,

@@ -4,7 +4,7 @@ export const renderField = ({ input, label, type, meta: { touched, error, warnin
     <div>
         <label className="renderLabel">{label}</label>
         <div>
-            <input {...input} autocomplete="false" type={type}/>
+            <input {...input} autoComplete="false" type={type}/>
             {touched && ((error && <span className="errorMsg">{error}</span>) || (warning && <span className="errorMsg">{warning}</span>))}
         </div>
     </div>

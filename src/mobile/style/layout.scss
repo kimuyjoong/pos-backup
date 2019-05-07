@@ -158,6 +158,14 @@ header{
   padding-left: 20px;
   box-sizing: border-box;
   font-size: 20px;
+  a{
+    display: block;
+    padding-left: 20px;
+    .blue{
+      color: #247de4;
+    }
+  }
+
 }
 
 .NavList li:last-child{

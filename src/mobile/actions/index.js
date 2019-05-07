@@ -6,7 +6,9 @@ import {
     TEST_API_ERROR,
     FETCH_LOGIN,
     FETCH_LOGIN_OUT,
-    FETCH_LOGIN_ERROR
+    FETCH_LOGIN_ERROR,
+    FETCH_PROPOSAL,
+    FETCH_PROPOSAL_ERROR
 } from './ActionTypes.js';
 
 export const navChange = () => {
@@ -52,10 +54,14 @@ export const fetchLoginApi = () => {
         try {
             const responseData = await fetch('https://jsonplaceholder.typicode.com/posts/1');
             const response = await responseData.json();
+            let data = {
+                nickName : '김사장'
+            };
 
             dispatch({
                 type: FETCH_LOGIN,
-                response
+                response,
+                data
             });
         } catch(err) {
             dispatch({
@@ -63,5 +69,17 @@ export const fetchLoginApi = () => {
                 err
             });
         }
+    }
+};
+
+export const fetchLoginOut = () => {
+    return async function(dispatch) {
+        const responseData = await fetch('https://jsonplaceholder.typicode.com/posts/1');
+        const response = await responseData.json();
+
+        dispatch({
+            type: FETCH_LOGIN_OUT,
+            response
+        });
     }
 };
