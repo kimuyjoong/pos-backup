@@ -8,12 +8,12 @@ class ProposalContainer extends React.Component {
     handleSubmit(){
         // const { onFetchProposalApi } = this.props;
         // onFetchProposalApi();
-        // window.location.href="/proposalsuccess";
+        window.location.href="/proposalsuccess";
     }
     render() {
         return (
             <>
-                <Proposal onSubmit={this.handleSubmit()} />
+                <Proposal onSubmit={this.handleSubmit} />
             </>
         )
     }
@@ -21,13 +21,13 @@ class ProposalContainer extends React.Component {
 
 // export default connect()(ProposalContainer);
 
-// const mapStateToProps = (state) => {
-//     console.log('mapStatePropsPro: ', state);
-//     return {
-//         link: state.Header.link,
-//     }
-// };
-//
+const mapStateToProps = (state) => {
+    console.log('mapStatePropsPro: ', state);
+    return {
+        link: state.Header.link,
+    }
+};
+
 const mapDispatchToProps = (dispatch) => {
     return {
         onFetchProposalApi: bindActionCreators(fetchProposalApi, dispatch)
